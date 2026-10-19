@@ -11,47 +11,49 @@ import { profile } from './data/profile.js';
 
 export default function App() {
   return (
-    <>
-      <Header
-        name={profile.name}
-        role={profile.role}
-      />
-
-      <main>
-        <About
-          text={profile.about}
-          english={profile.english}
+    <div className="min-h-screen bg-slate-950 font-sans text-slate-300 antialiased selection:bg-emerald-300 selection:text-slate-950">
+      <div className="mx-auto grid max-w-[1500px] items-start gap-6 p-4 sm:p-6 lg:grid-cols-[280px_minmax(0,1fr)]">
+        <Header
+          name={profile.name}
+          role={profile.role}
         />
 
-        <Skills
-          skills={profile.skills}
-        />
+        <div className="min-w-0 space-y-6">
+          <main className="grid gap-6 xl:grid-cols-2">
+            <About
+              text={profile.about}
+              english={profile.english}
+            />
 
-        <Projects
-          projects={profile.projects}
-          intro={profile.projectsIntro}
-        />
+            <Skills
+              skills={profile.skills}
+            />
 
-        <Experience
-          experience={profile.experience}
-          intro={profile.experienceIntro}
-          learning={profile.experienceLearning}
-        />
+            <Projects
+              projects={profile.projects}
+              intro={profile.projectsIntro}
+            />
 
-        <Education
-          education={profile.education}
-        />
+            <Experience
+              experience={profile.experience}
+              intro={profile.experienceIntro}
+              learning={profile.experienceLearning}
+            />
 
-        <Contacts
-          email={profile.email}
-          github={profile.github}
-          linkedin={profile.linkedin}
-        />
-      </main>
+            <Education
+              education={profile.education}
+            />
 
-      <Footer
-        name={profile.name}
-      />
-    </>
+            <Contacts
+              email={profile.email}
+              github={profile.github}
+              linkedin={profile.linkedin}
+            />
+          </main>
+
+          <Footer name={profile.name} />
+        </div>
+      </div>
+    </div>
   );
 }
