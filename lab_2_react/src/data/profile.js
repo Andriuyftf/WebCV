@@ -46,17 +46,14 @@ export const profile = {
     },
   ],
 
-  // Коли з’являться проєкти, додай сюди об’єкти.
-  // Поля проєкту: id, title, description, result, repository.
+
   projects: [],
 
   projectsIntro:
     'Поки не маю завершених власних проєктів. ' +
     'У цьому розділі поступово публікуватиму свої роботи.',
 
-  // Коли з’явиться досвід, додай сюди об’єкти.
-  // Поля: id, title, organization, period, tasks.
-  // tasks — масив рядків із виконаними завданнями.
+
   experience: [],
 
   experienceIntro:
