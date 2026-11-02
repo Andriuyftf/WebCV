@@ -5,6 +5,7 @@ const navigation = [
   ['experience', 'Досвід'],
   ['education', 'Освіта'],
   ['contacts', 'Контакти'],
+  ['reviews', 'Відгуки (демо)'],
 ];
 
 export default function Header({ name, role }) {

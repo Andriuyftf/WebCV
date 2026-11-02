@@ -1,1 +1,14 @@
 @import "tailwindcss";
+@import "./interactive.css";
+
+@theme inline {
+  --color-slate-950: var(--cv-canvas);
+  --color-slate-900: var(--cv-panel);
+  --color-slate-800: var(--cv-border);
+  --color-slate-700: var(--cv-border-strong);
+  --color-slate-50: var(--cv-heading);
+  --color-slate-300: var(--cv-text);
+  --color-slate-400: var(--cv-muted);
+  --color-emerald-300: var(--cv-accent);
+  --color-emerald-200: var(--cv-accent-hover);
+}
