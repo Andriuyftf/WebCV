@@ -1,0 +1,293 @@
+:root {
+  --cv-canvas: #020617;
+  --cv-panel: #0f172a;
+  --cv-border: #1e293b;
+  --cv-border-strong: #334155;
+  --cv-heading: #f8fafc;
+  --cv-text: #cbd5e1;
+  --cv-muted: #94a3b8;
+  --cv-accent: #6ee7b7;
+  --cv-accent-hover: #a7f3d0;
+  --cv-button-text: #020617;
+  --cv-error: #fda4af;
+}
+
+:root[data-theme="light"] {
+  --cv-canvas: #f1f5f9;
+  --cv-panel: #ffffff;
+  --cv-border: #cbd5e1;
+  --cv-border-strong: #94a3b8;
+  --cv-heading: #0f172a;
+  --cv-text: #334155;
+  --cv-muted: #475569;
+  --cv-accent: #047857;
+  --cv-accent-hover: #065f46;
+  --cv-button-text: #ffffff;
+  --cv-error: #be123c;
+}
+
+body.cv-page {
+  background: var(--cv-canvas);
+  color: var(--cv-text);
+}
+
+body.cv-page :is(h1, h2, h3, strong) {
+  color: var(--cv-heading);
+}
+
+body.cv-page :is(header, main > section) {
+  background: var(--cv-panel);
+  border-color: var(--cv-border);
+}
+
+body.cv-page :is(
+  article,
+  #skills li,
+  #projects > p,
+  address li,
+  #about > p:last-child
+) {
+  background: var(--cv-canvas);
+  border-color: var(--cv-border-strong);
+}
+
+body.cv-page :is(nav, footer) {
+  border-color: var(--cv-border);
+}
+
+body.cv-page a {
+  color: var(--cv-accent);
+}
+
+body.cv-page nav a {
+  color: var(--cv-text);
+}
+
+body.cv-page nav a:hover {
+  background: var(--cv-canvas);
+  color: var(--cv-accent);
+}
+
+body.cv-page a:focus-visible {
+  outline-color: var(--cv-accent);
+}
+
+body.cv-page footer {
+  color: var(--cv-muted);
+}
+
+.lab-toolbar,
+.lab-actions,
+.lab-footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.lab-toolbar {
+  padding: 16px;
+  border: 1px solid var(--cv-border);
+  border-radius: 16px;
+  background: var(--cv-panel);
+  color: var(--cv-text);
+}
+
+.lab-toolbar p {
+  margin: 0;
+  font-size: 13px;
+}
+
+.lab-actions {
+  margin-top: 12px;
+}
+
+.lab-button {
+  padding: 10px 14px;
+  border: 1px solid var(--cv-border-strong);
+  border-radius: 8px;
+  background: var(--cv-canvas);
+  color: var(--cv-heading);
+  font: inherit;
+  font-size: 14px;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.lab-button:hover {
+  border-color: var(--cv-accent);
+}
+
+.lab-button:focus-visible {
+  outline: 2px solid var(--cv-accent);
+  outline-offset: 3px;
+}
+
+.lab-primary {
+  background: var(--cv-accent);
+  color: var(--cv-button-text);
+  border-color: var(--cv-accent);
+}
+
+.lab-panel {
+  grid-column: 1 / -1;
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid var(--cv-border);
+  border-radius: 16px;
+  background: var(--cv-panel);
+  color: var(--cv-text);
+  scroll-margin-top: 24px;
+}
+
+.lab-panel h2 {
+  margin: 0 0 16px;
+  color: var(--cv-heading);
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.lab-review-grid {
+  display: grid;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.lab-review {
+  min-width: 0;
+  margin: 0;
+  padding: 20px;
+  border: 1px solid var(--cv-border);
+  border-radius: 12px;
+  background: var(--cv-canvas);
+  overflow-wrap: anywhere;
+}
+
+.lab-review h3 {
+  margin: 0;
+  color: var(--cv-heading);
+  font-weight: 600;
+}
+
+.lab-review p {
+  margin: 12px 0 0;
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+.lab-review-email {
+  color: var(--cv-accent);
+  font-size: 13px;
+}
+
+.lab-status {
+  margin-top: 16px;
+  color: var(--cv-muted);
+}
+
+.lab-error {
+  color: var(--cv-error);
+}
+
+.lab-footer-row {
+  justify-content: space-between;
+}
+
+.lab-storage {
+  width: 100%;
+  margin-top: 16px;
+}
+
+.lab-storage summary {
+  cursor: pointer;
+  color: var(--cv-accent);
+}
+
+.lab-storage-item {
+  margin-top: 12px;
+}
+
+.lab-storage pre {
+  max-width: 100%;
+  margin-top: 8px;
+  padding: 12px;
+  border: 1px solid var(--cv-border);
+  border-radius: 8px;
+  background: var(--cv-canvas);
+  color: var(--cv-text);
+  font: 12px/1.6 monospace;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.lab-dialog {
+  position: fixed;
+  inset: 0;
+  width: min(520px, calc(100% - 32px));
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: 24px;
+  overflow-y: auto;
+  border: 1px solid var(--cv-border-strong);
+  border-radius: 16px;
+  background: var(--cv-panel);
+  color: var(--cv-text);
+}
+
+.lab-dialog::backdrop {
+  background: rgb(2 6 23 / 75%);
+}
+
+.lab-dialog h2 {
+  margin: 0;
+  color: var(--cv-heading);
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.lab-dialog > p {
+  margin-top: 12px;
+}
+
+.lab-form {
+  display: grid;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.lab-form label {
+  display: grid;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.lab-form :is(input, textarea) {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--cv-border-strong);
+  border-radius: 8px;
+  background: var(--cv-canvas);
+  color: var(--cv-heading);
+  font: inherit;
+}
+
+.lab-form :is(input, textarea):focus-visible {
+  outline: 2px solid var(--cv-accent);
+  outline-offset: 2px;
+}
+
+.lab-form textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+body:has(dialog[open]) {
+  overflow: hidden;
+}
+
+@media (min-width: 1280px) {
+  .lab-review-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

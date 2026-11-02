@@ -5,10 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./styles.css">
-
+  <link rel="stylesheet" href="./interactive.css">
   <style>
     body {
-      color-scheme: dark;
+      color-scheme: inherit;
     }
   </style>
   <title>Никитюк Андрій — DevOps CV</title>
@@ -19,12 +19,31 @@
 
 <body class="cv-page">
   <header id="top">
-    <p style="color: #6ee7b7;">
+    <p style="color: var(--cv-accent);">
       DevOps Control Room — персональне CV
     </p>
-
     <h1>Никитюк Андрій</h1>
     <p>DevOps-інженер</p>
+
+    <div class="lab-actions">
+      <button id="theme-toggle" type="button" class="lab-button">
+        Тема
+      </button>
+    
+      <button id="theme-auto" type="button" class="lab-button">
+        За часом
+      </button>
+    
+      <button
+        id="open-contact"
+        type="button"
+        class="lab-button lab-primary"
+      >
+        Зворотний зв’язок
+      </button>
+    </div>
+
+    <p id="theme-status"></p>
 
     <nav aria-label="Розділи резюме">
       <ul>
@@ -34,6 +53,7 @@
         <li><a href="#experience">Досвід</a></li>
         <li><a href="#education">Освіта</a></li>
         <li><a href="#contacts">Контакти</a></li>
+        <li><a href="#reviews">Відгуки (демо)</a></li>
       </ul>
     </nav>
   </header>
@@ -153,12 +173,110 @@
         </ul>
       </address>
     </section>
+
+    <section id="reviews" class="lab-panel">
+      <h2>Навчальні відгуки</h2>
+
+      <p>
+        Демонстраційні коментарі JSONPlaceholder,
+        не реальні рекомендації роботодавців.
+      </p>
+    
+      <p id="reviews-status" class="lab-status" role="status">
+        Завантаження відгуків…
+      </p>
+    
+      <div id="reviews-list" class="lab-review-grid"></div>
+    </section>
+
   </main>
 
   <footer>
     <p>© 2026 Никитюк Андрій. DevOps Control Room.</p>
     <a href="#top">На початок</a>
+    <details class="lab-storage">
+      <summary>Дані браузера та localStorage</summary>
+      <div id="storage-list"></div>
+    </details>
   </footer>
+  <dialog
+  id="contact-dialog"
+  class="lab-dialog"
+  aria-labelledby="contact-title"
+>
+  <h2 id="contact-title">Зворотний зв’язок</h2>
+
+  <p>Надішли повідомлення Андрію.</p>
+
+  <form
+    id="contact-form"
+    class="lab-form"
+    action="https://formspree.io/f/xkjjvpgp"
+    method="POST"
+  >
+    <label for="contact-name">
+      Ім’я
+
+      <input
+        id="contact-name"
+        name="name"
+        autocomplete="name"
+        maxlength="100"
+        required
+      >
+    </label>
+
+    <label for="contact-email">
+      Email
+
+      <input
+        id="contact-email"
+        name="email"
+        type="email"
+        autocomplete="email"
+        maxlength="254"
+        required
+      >
+    </label>
+
+    <label for="contact-phone">
+      Номер телефону
+
+      <input
+        id="contact-phone"
+        name="phone"
+        type="tel"
+        autocomplete="tel"
+        pattern="[+]?[0-9][0-9 ]{6,19}"
+        title="Номер із цифр і пробілів, за потреби з плюсом на початку"
+        required
+      >
+    </label>
+
+    <label for="contact-message">
+      Повідомлення
+
+      <textarea
+        id="contact-message"
+        name="message"
+        maxlength="3000"
+        required
+      ></textarea>
+    </label>
+
+    <div class="lab-actions">
+      <button type="submit" class="lab-button lab-primary">
+        Надіслати
+      </button>
+
+      <button id="close-contact" type="button" class="lab-button">
+        Закрити
+      </button>
+    </div>
+  </form>
+</dialog>
+
+<script type="module" src="./script.js"></script>
 </body>
 
 </html>
